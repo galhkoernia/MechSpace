@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, BookOpen } from "lucide-react";
-import { MaterialReader } from "@/components/reader/MaterialReader";
 import { FileTypeBadge } from "@/components/ui/FileTypeBadge";
 import { BookmarkButton } from "@/components/materials/BookmarkButton";
 import { getMaterialById } from "@/data/mock/materials";
@@ -26,11 +25,10 @@ export default async function MaterialDetailPage({ params }: { params: Promise<{
           <div className="sm:col-span-2"><dt className="text-sm text-muted">Description</dt><dd className="mt-1 leading-relaxed">{material.description}</dd></div>
         </dl>
         <div className="flex flex-wrap gap-3">
-          <Link href="#reader" className="btn-primary"><BookOpen className="h-4 w-4" aria-hidden /> Read Material</Link>
+          <Link href={`/materials/${material.id}/read`} className="btn-primary"><BookOpen className="h-4 w-4" aria-hidden /> Read Material</Link>
           <BookmarkButton materialId={material.id} />
         </div>
       </section>
-      <MaterialReader fileType={material.fileType} fileUrl={material.fileUrl} title={material.title} />
     </div>
   );
 }

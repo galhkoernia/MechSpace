@@ -8,7 +8,7 @@ import { categories } from "@/data/mock/categories";
 import { materials } from "@/data/mock/materials";
 import { currentLearning, studentName } from "@/data/mock/student";
 
-const LATEST_COUNT = 3;
+const LATEST_COUNT = 2;
 
 export default function DashboardPage() {
   return (
