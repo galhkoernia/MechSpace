@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-canvas text-ink antialiased;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid #4f63e8;
+    outline-offset: 2px;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+
+  .btn-secondary {
+    @apply btn border border-line bg-white text-ink hover:bg-brand-50;
+  }
+
+  .btn:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .card {
+    @apply rounded-3xl border border-line bg-white shadow-card;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-sm placeholder:text-muted/70;
+  }
+}
